@@ -13,6 +13,8 @@ def add_or_remove_cash(dictionary, cash):
 def add_or_remove_cash(dictionary, cash):
     dictionary["admin"]["total_cash"] -= 10
     return get_total_cash
+# cannot get both functions to run as the first seems to affect the total when trying to run the second, how do i amend them so that they can run simaltaneously.
+# for a long time it was giving me a syntax error against += condition
 
 def get_pets_sold(dictionary):
     return dictionary["admin"]["pets_sold"]
@@ -24,9 +26,30 @@ def increase_pets_sold(dictionary, sales):
 def get_stock_count(dictionary):
     return len(dictionary["pets"])
 
-def get_pets_by_breed(pet_shop_info, breed_type):
+def get_pets_by_breed(dictionary, breed_type):
     breed_list = []
-    for pet in pet_shop_info["pets"]:
+    for pet in dictionary["pets"]:
         if pet["breed"] == breed_type:
             breed_list.append(pet["breed"])
     return breed_list
+# my first attemp at this wasn;t far off the mark, just needed to refer to others on slack to fine tune it,
+
+def get_pets_by_breed(dictionary, breed_type):
+    dalmations = []
+    for pet in dictionary["pets"]:
+        if pet["breed"] == breed_type:
+            dalmations.append(pet["breed"])
+    return dalmations
+
+def find_pet_by_name(dictionary, pet_name):
+    for pet in dictionary["pets"]:
+        if pet["name"] == pet_name:
+            return pet
+
+# why did this need a loop, and couldn't just be called same as the early functions i.e get_pet_shop_name
+# also i wanted my final return statement to be pet_name, how do i rearrange the function to end that way, e.g
+# def find_pet_by_name(dictionary, pet_name):
+#     for pet in dictionary["pets"]:
+#         if pet_name == pet["name"]:
+#             return pet_name
+
