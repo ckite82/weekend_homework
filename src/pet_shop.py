@@ -1,28 +1,46 @@
 # WRITE YOUR FUNCTIONS HERE
 
+# test 1 - fairly straight forward, just took a short while for brain to function and 
+# the test program was asking us to do. Confusing going between the two programs and
+# breaking it all down, whilst trying to link everything.
 def get_pet_shop_name(dictionary):
     return dictionary["name"]
 
+# test 2 - same as above but with different key
 def get_total_cash(dictionary):
     return dictionary["admin"]["total_cash"]
 
+# test 3 tried and failed with first few attempts. I think I was on the right lines,
+# but had the lay-out slightly wrong each time.
+# 1. def get_total_cash(dictionary, cash):
+#       return add_or_remove_cash = dictionary["admin"]["total_cash"] += cash
+# 2. def add_or_remove_cash(dictionary, cash):
+#       remove_cash = dictionary["admin"]["total_cash"] += cash
+#       return remove_cash
+# for a long time it was giving me a syntax error against += condition 
 def add_or_remove_cash(dictionary, cash):
-    dictionary["admin"]["total_cash"] += 10
+    dictionary["admin"]["total_cash"] += cash
     return get_total_cash
     
+# test 4 was same as above but subtracting, the issue i had here was I cannot get
+# both functions to run simaltaneously as the first seems to affect the total when
+# trying to run the second, how do i amend them so that they can both run.
 def add_or_remove_cash(dictionary, cash):
-    dictionary["admin"]["total_cash"] -= 10
+    dictionary["admin"]["total_cash"] -= cash
     return get_total_cash
-# cannot get both functions to run as the first seems to affect the total when trying to run the second, how do i amend them so that they can run simaltaneously.
-# for a long time it was giving me a syntax error against += condition
 
+# test 5 was straight forward, similar to test 1 & 2, but with different dict keywords
 def get_pets_sold(dictionary):
     return dictionary["admin"]["pets_sold"]
 
+# test 6 was straight forward and was similar to test 3 & 4, need to get out of the habit
+# of using the integer value after += and remember to use my placeholder - sales in this case.
 def increase_pets_sold(dictionary, sales):
-    dictionary["admin"]["pets_sold"] += 2
+    dictionary["admin"]["pets_sold"] += sales
     return get_pets_sold
 
+# test 7 this one was actually okay.  Also had a go at re-writing it today and got it 
+# right straight-away.
 def get_stock_count(dictionary):
     return len(dictionary["pets"])
 
