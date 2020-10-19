@@ -53,3 +53,22 @@ def find_pet_by_name(dictionary, pet_name):
 #         if pet_name == pet["name"]:
 #             return pet_name
 
+def find_pet_by_name(dictionary, pet_name):
+    for pet in dictionary["pets"]:
+        if pet["name"] == pet_name:
+            return pet
+
+# so basically the loop is doing the same as previous, but as it is not able to find the pet named "Fred", it defaults with None?
+
+def remove_pet_by_name(dictionary, pet_remove):
+    for pet in dictionary["pets"]:
+        if pet["name"] == pet_remove:
+            dictionary["pets"].remove(pet)
+
+
+# def remove_pet_by_name(pets, name):
+#     pass
+#     for pet in pets["pets"]:
+#         if pet["name"] == name:
+#             
+#             pet.pop(name)
