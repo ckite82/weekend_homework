@@ -65,10 +65,30 @@ def remove_pet_by_name(dictionary, pet_remove):
         if pet["name"] == pet_remove:
             dictionary["pets"].remove(pet)
 
+# found it hard to put the combo of words in right working order for line 66
 
-# def remove_pet_by_name(pets, name):
-#     pass
-#     for pet in pets["pets"]:
-#         if pet["name"] == name:
-#             
-#             pet.pop(name)
+def add_pet_to_stock(dictionary, new_pet):
+    dictionary["pets"].append(new_pet)
+
+# referred to the example John ran through on Friday in the recap.  Wasn't sure if I was accessing the new_pet dictionary properly before adding to the "pets" dictionary, or not. Ran the test and it accepted so moved on.
+
+def get_customer_cash(dictionary):
+    return dictionary["cash"]
+
+def remove_customer_cash(dictionary, cash):
+    dictionary["cash"] -= 100
+    return remove_customer_cash
+
+# the way the test is worded and set out I thought I might need to over complicate this one, was surprised that an easy solution like the early tests was able to make this pass.
+
+# def customer_pet_count(dictionary, count):
+#     return len(dictionary["pets"])
+
+# Couldnt get this function to work, brain also stopped working.
+
+# NameError: name 'get_customer_pet_count' is not defined - this was a regular error that I came across.
+
+# Couldnt get this function to work, brain also stopped working.
+
+# def add_pet_to_customer(customer, new_pet):
+#     customer["pets"].append(new_pet)
